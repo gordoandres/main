@@ -3,46 +3,28 @@ require 'spec_helper'
 describe "Static pages" do
 
   let(:base_title) { "Openii" }
+  subject { page }
 
   describe "Pagina de inicio" do
+    before { visit root_path }
 
-    it "debe tener el texto 'Openii'" do
-      visit '/static_pages/home'
-      expect(page).to have_content("Openii")
-    end
-
-    it "debe tener el titulo 'Inicio'" do
-      visit '/static_pages/home'
-      expect(page).to have_title("#{base_title} | Inicio")
-    end
-
+    it { should have_content("Openii") }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Inicio') }
   end
 
   describe "Pagina de ayuda" do 
+    before { visit help_path }
 
-  	it "debe tener el texto 'Ayuda'" do
-	  	visit '/static_pages/help'
-  		expect(page).to have_content('Ayuda')
-  	end
-    it "debe tener el titulo 'Ayuda'" do
-      visit '/static_pages/help'
-      expect(page).to have_title("#{base_title} | Ayuda")
-    end
-
+  	it { should have_content('Ayuda') }
+    it { should have_title(full_title('Ayuda')) }
   end
 
   describe "Acerca de" do 
-  	it "debe tener el texto 'Acerca de'" do
-  		visit '/static_pages/acerca_de'
-  		expect(page).to have_content('Acerca de')
-  	end
+    before { visit acerca_de_path }
 
-    it "debe tener el titulo 'Acerca de'" do
-      visit '/static_pages/acerca_de'
-      expect(page).to have_title("#{base_title} | Acerca de")
-    end
-
+  	it { should have_content('Acerca de') }
+    it { should have_title(full_title('Acerca de'))}
   end
-
 
 end
