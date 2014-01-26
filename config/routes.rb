@@ -1,5 +1,5 @@
 Main::Application.routes.draw do
-  get "users/new"
+  resources :users
   root 'static_pages#home'
   match '/help', to: 'static_pages#help', via:'get' 
   match '/acerca_de', to: 'static_pages#acerca_de', via:'get'
