@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action :usuario_ingresado, only: [:index, :edit, :update]
+  before_action :usuario_ingresado, only: [:index, :edit, :update, :destroy]
   before_action :usuario_correcto, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
 
   def index
     @users = User.paginate(page: params[:page])
@@ -13,6 +14,12 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Usuario borrado."
+    redirect_to users_url
   end
 
   def create
@@ -59,5 +66,9 @@ class UsersController < ApplicationController
   def usuario_correcto
     @user = User.find(params[:id])
     redirect_to(root_url) unless usuario_actual?(@user)
+  end
+
+  def admin_user
+    redirect_to(root_url) unless usuario_actual.admin?
   end
 end

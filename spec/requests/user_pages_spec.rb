@@ -5,7 +5,9 @@ describe "Páginas de usuarios" do
 	subject { page }
 
   describe "index" do
+
     let(:user) { FactoryGirl.create(:user) }
+    
     before(:each) do
       ingreso user
       visit users_path
@@ -25,6 +27,27 @@ describe "Páginas de usuarios" do
           expect(page).to have_selector('li', text: user.name)
         end
       end
+
+      describe "links de borrado" do
+        it { should_not have_link('borrar') }
+
+        describe "como usuario admin" do
+          let(:admin) { FactoryGirl.create(:admin) }
+          before do
+            ingreso admin
+            visit users_path
+          end
+
+          it { should have_link('borrar', href: user_path(User.first)) }
+          it "debe poder borrar otro usuario" do
+            expect do
+              click_link('borrar', match: :first)
+            end.to change(User, :count).by(-1)
+          end
+          it { should_not have_link('borrar', href: user_path(admin)) }
+        end
+      end
+
     end
   end
 

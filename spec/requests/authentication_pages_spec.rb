@@ -103,5 +103,17 @@ describe "Autenticacion" do
         specify { expect(response).to redirect_to(root_url) }
       end
     end
+
+    describe "como usuario no admin" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:non_admin) { FactoryGirl.create(:user) }
+
+      before { ingreso non_admin, no_capybara: true }
+
+      describe "mandando un pedido DELETE a una accion Users#destroy" do
+        before { delete user_path(user) }
+        specify { expect(response).to redirect_to(root_url) }
+      end
+    end
   end
 end
