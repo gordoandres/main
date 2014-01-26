@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      ingreso @user
       flash[:success] = "Bienvenido a Openii!"
       redirect_to @user
   	else

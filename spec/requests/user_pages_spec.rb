@@ -47,6 +47,7 @@ describe "Páginas de usuarios" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'usuario@ejemplo.com') }
 
+        it { should have_link('Salir') }
         it { should have_title(user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Bienvenido') }
       end
