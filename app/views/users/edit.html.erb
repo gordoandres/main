@@ -22,6 +22,7 @@
     <% end %>
 
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">cambiar</a>
+
+    <li><%= link_to "Cambiar", 'http://gravatar.com/emails', target: '_blank' %></li>
   </div>
 </div>

@@ -9,4 +9,10 @@ FactoryGirl.define do
     	admin true
     end
   end
+
+  factory :proyect do
+    nombre "Panaderia Lolita"
+    user
+  end
+
 end

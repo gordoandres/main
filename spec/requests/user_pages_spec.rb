@@ -53,11 +53,20 @@ describe "Páginas de usuarios" do
 
 	describe "Pagina del perfil" do
 		let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:proyect, user: user, nombre: "Foo") }
+    let!(:m2) { FactoryGirl.create(:proyect, user: user, nombre: "Bar") }
+
 		before { visit user_path(user) }
 
 		it { should have_content(user.name) }
 		it { should have_title(user.name) }
-	end
+
+    describe "proyectos" do
+      it { should have_content(m1.nombre) }
+      it { should have_content(m2.nombre) }
+      it { should have_content(user.proyects.count) }
+    end 
+  end
 
 	describe "pagina de registro" do
     
@@ -113,7 +122,7 @@ describe "Páginas de usuarios" do
     describe "pagina" do
       it { should have_content("Actualiza tu perfil") }
       it { should have_title("Editar usuario") }
-      it { should have_link('cambiar', href: 'http://gravatar.com/emails') }
+      it { should have_link('Cambiar', href: 'http://gravatar.com/emails') }
     end
 
     describe "con informacion invalida" do
