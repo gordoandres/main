@@ -23,6 +23,13 @@ module SessionsHelper
 		user == usuario_actual
 	end
 
+	def usuario_ingresado
+		unless ingresado?
+			store_location
+			redirect_to ingreso_url, notice: "Por favor ingresa"
+		end
+	end
+
 	def redirect_back_or(default)
 		redirect_to(session[:return_to] || default)
 		session.delete(:return_to)

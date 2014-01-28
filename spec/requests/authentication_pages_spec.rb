@@ -68,6 +68,20 @@ describe "Autenticacion" do
         end
       end
 
+      describe "en el controlador de proyectos" do
+
+        describe "mandando a la accion de crear" do
+          before { post proyects_path }
+          specify { expect(response).to redirect_to(ingreso_path) }
+        end
+
+        describe "mandando a la accion de destruir" do
+          before { delete proyect_path(FactoryGirl.create(:proyect)) }
+          specify { expect(response).to redirect_to(ingreso_path) }
+        end
+
+      end
+
       describe "en el control de usuarios" do
 
         describe "visitando la pagina editar" do

@@ -1,6 +1,7 @@
 Main::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :proyects, only: [:create, :destroy]
   root 'static_pages#home'
   match '/registro', to: 'users#new', via: 'get'
   match '/ingreso', to: 'sessions#new', via: 'get'
