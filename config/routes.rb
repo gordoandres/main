@@ -3,6 +3,7 @@ Main::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :proyects, only: [:create, :destroy]
   root 'static_pages#home'
+  match '/openii_proyect', to: 'proyects#openii_proyect', via: 'get'
   match '/registro', to: 'users#new', via: 'get'
   match '/ingreso', to: 'sessions#new', via: 'get'
   match '/salir', to: 'sessions#destroy', via:'delete'

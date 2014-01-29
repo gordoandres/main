@@ -45,4 +45,7 @@ module SessionsHelper
 		cookies.delete(:remember_token)
 		self.usuario_actual=nil
 	end
+
+	def openii_proyect
+	end
 end

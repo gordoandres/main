@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
 		Proyect.where("user_id = ?", id)
 	end
 
+	def openii_proyect
+	end
+
 	def User.encrypt(token)
 		Digest::SHA1.hexdigest(token.to_s)
 	end

@@ -3,7 +3,9 @@ class ProyectsController < ApplicationController
 	before_action :usuario_correcto, only: :destroy 
 
 	def index
-		
+	end
+
+	def openii_proyect
 	end
 
 	def create

@@ -15,4 +15,7 @@ class StaticPagesController < ApplicationController
   def contacto
   end
 
+  def openii_proyect
+  end
+
 end
