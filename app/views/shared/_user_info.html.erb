@@ -1,0 +1,10 @@
+<%= link_to gravatar_for(usuario_actual, size: 52), usuario_actual %>
+<h1>
+  <%= usuario_actual.name %>
+</h1>
+<span>
+  <%= link_to "Ver mi perfil.", usuario_actual %>
+</span>
+<span>
+  <%= pluralize(usuario_actual.proyects.count, "proyect") %>
+</span>

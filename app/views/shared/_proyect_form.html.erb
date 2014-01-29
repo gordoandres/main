@@ -1,0 +1,7 @@
+<%= form_for(@proyect) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :nombre, placeholder: "Título y descripción del proyecto" %>
+  </div>
+  <%= f.submit "Crear", class: "btn btn-large btn-primary" %>
+<% end %>

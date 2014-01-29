@@ -6,10 +6,22 @@ class ProyectsController < ApplicationController
 	end
 
 	def create
-		
+	    @proyect = usuario_actual.proyects.build(proyect_params)
+	    if @proyect.save
+	      flash[:success] = "Proyecto creado!"
+	      redirect_to root_url
+	    else
+	      render 'static_pages/home'
+	    end
 	end
 
 	def destroy
 		
 	end
+
+	 private
+
+    def proyect_params
+      params.require(:proyect).permit(:nombre)
+    end
 end

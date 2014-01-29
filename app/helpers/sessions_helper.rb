@@ -26,7 +26,7 @@ module SessionsHelper
 	def usuario_ingresado
 		unless ingresado?
 			store_location
-			redirect_to ingreso_url, notice: "Por favor ingresa"
+			redirect_to ingreso_url, notice: "Por favor ingresa."
 		end
 	end
 

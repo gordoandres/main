@@ -57,12 +57,13 @@ class UsersController < ApplicationController
 
   # Antes de los filtros
 
-  def usuario_ingresado
-    unless ingresado?
-      store_location
-      redirect_to ingreso_url, notice: "Por favor registrate."
-    end
-  end
+  #def usuario_ingresado
+  #  unless ingresado?
+  #    store_location
+  #    redirect_to ingreso_url, notice: "Por favor ingresa."
+  #  end
+  #end
+
 
   def usuario_correcto
     @user = User.find(params[:id])
