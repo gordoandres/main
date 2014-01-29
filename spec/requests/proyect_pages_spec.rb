@@ -30,4 +30,18 @@ describe "Paginas de Proyect" do
       end
     end
   end
+
+  describe "eliminar proyectos" do 
+
+    before { FactoryGirl.create(:proyect, user: user) }
+
+    describe "como usuario correcto" do 
+
+      before { visit root_path }
+
+      it "debe borrar un proyecto" do
+        expect { click_link "borrar" }.to change(Proyect, :count).by(-1)
+      end
+    end
+  end
 end

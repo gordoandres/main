@@ -3,4 +3,9 @@
   <span class="timestamp">
     Creado hace <%= time_ago_in_words(proyect.created_at) %>.
   </span>
+  <% if usuario_actual?(proyect.user) %>
+    <%= link_to "borrar", proyect, method: :delete,
+                                     data: { confirm: "Estas seguro?" },
+                                     title: proyect.nombre %>
+  <% end %>
 </li>

@@ -1,5 +1,6 @@
 class ProyectsController < ApplicationController
 	before_action :usuario_ingresado, only: [:create, :destroy]
+	before_action :usuario_correcto, only: :destroy 
 
 	def index
 		
@@ -17,12 +18,19 @@ class ProyectsController < ApplicationController
 	end
 
 	def destroy
-		
+		@proyect.destroy
+		redirect_to root_url
 	end
 
 	 private
 
     def proyect_params
       params.require(:proyect).permit(:nombre)
+    end
+
+    def usuario_correcto
+    	@proyect = usuario_actual.proyects.find_by(id: params[:id])
+    rescue
+    	redirect_to root_url if @proyect.nil?
     end
 end
