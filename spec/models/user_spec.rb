@@ -18,6 +18,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:proyects) }  
+  it { should respond_to(:feed) }  
 
   it { should be_valid }
   it { should_not be_admin}
@@ -89,7 +90,15 @@ describe User do
   end
 
   describe "remember token" do
+
     before { @user.save }
+    let!(:older_proyect) do
+      FactoryGirl.create(:proyect, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_proyect) do
+      FactoryGirl.create(:proyect, user: @user, created_at: 1.hour.ago)
+    end
+
     its(:remember_token) { should_not be_blank }
   end
 
@@ -114,6 +123,16 @@ describe User do
       proyects.each do |proyect|
         expect(Proyect.where(id: proyect.id)).to be_empty
       end
+    end
+
+      describe "estado" do 
+        let(:unfollowed_proyect) do
+          FactoryGirl.create(:proyect, user: FactoryGirl.create(:user))
+        end
+
+        its(:feed) { should include(newer_proyect) }
+        its(:feed) { should include(older_proyect) }
+        its(:feed) { should_not include(unfollowed_proyect) }
     end
   end
 end

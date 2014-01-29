@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-  	@proyect = usuario_actual.proyects.build if ingresado?
+  	if ingresado?
+  		@proyect = usuario_actual.proyects.build 
+  		@feed_items = usuario_actual.feed.paginate(page: params[:page])
+  	end
   end
 
   def help

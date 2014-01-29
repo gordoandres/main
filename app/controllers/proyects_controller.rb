@@ -11,6 +11,7 @@ class ProyectsController < ApplicationController
 	      flash[:success] = "Proyecto creado!"
 	      redirect_to root_url
 	    else
+	      @feed_items = []
 	      render 'static_pages/home'
 	    end
 	end
