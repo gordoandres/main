@@ -80,7 +80,7 @@ Main::Application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
-    address: "mail.domain.com",
+    address: "smtp.gmail.com",
     port: 587, 
     authentication: "plain",
     user_name: "mhernand78@gmail.com",
