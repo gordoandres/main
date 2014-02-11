@@ -9,6 +9,25 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+# para el form de contacto
+# Front-end {
+gem 'haml-rails', '~> 0.4.0'
+# }
+# Forms, mail {
+gem 'mail_form', '~> 1.5.0.rc'
+gem 'simple_form', '~> 3.0.0.rc'
+# }
+# Development (Optional) {
+gem 'better_errors', group: :development
+gem 'quiet_assets', group: :development
+# }
+# Development Guard {
+gem 'guard-rails', group: :development
+gem 'guard-livereload', group: :development
+gem 'rack-livereload', group: :development
+gem 'guard-bundler', group: :development
+# }
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'

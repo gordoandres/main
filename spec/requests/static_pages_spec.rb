@@ -44,7 +44,7 @@ describe "Static pages" do
   end
 
   describe "Contacto" do
-    before { visit contacto_path }
+    before { visit new_contact_path }
 
     it { should have_selector('h1', text: 'Contáctanos') }
     it { should have_title(full_title('Contacto')) }

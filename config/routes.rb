@@ -2,6 +2,7 @@ Main::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :proyects, only: [:create, :destroy]
+  resources "contacts", only: [:new, :create]
   root 'static_pages#home'
   match '/openii_proyect', to: 'proyects#openii_proyect', via: 'get'
   match '/registro', to: 'users#new', via: 'get'
@@ -9,7 +10,7 @@ Main::Application.routes.draw do
   match '/salir', to: 'sessions#destroy', via:'delete'
   match '/help', to: 'static_pages#help', via:'get' 
   match '/acerca_de', to: 'static_pages#acerca_de', via:'get'
-  match '/contacto' , to: 'static_pages#contacto', via:'get'
+  #match '/contacto' , to: 'static_pages#contacto', via:'get'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
