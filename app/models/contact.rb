@@ -9,7 +9,7 @@ class Contact < MailForm::Base
 	def headers
 		{
 			:subject => "Openii Contact",
-			:to => "mariohernandezv@yahoo.com.ar",
+			:to => "mhernand78@gmail.com",
 			:from => %("#{name}" <#{email}>)
 
 		}
