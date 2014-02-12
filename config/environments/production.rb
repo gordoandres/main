@@ -77,6 +77,7 @@ Main::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
@@ -84,7 +85,7 @@ Main::Application.configure do
     port: 587, 
     authentication: "plain",
     user_name: "mhernand78@gmail.com",
-    password: "anamaria78",
+    password: ENV['SMTP_PASSWORD'],
     enable_starttls_auto: true
   }
 
