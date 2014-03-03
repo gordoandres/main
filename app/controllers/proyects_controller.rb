@@ -6,7 +6,9 @@ class ProyectsController < ApplicationController
 	end
 
 	def openii_proyect
+		
 	end
+
 
 	def create
 	    @proyect = usuario_actual.proyects.build(proyect_params)
