@@ -8,9 +8,8 @@ class ProyectsController < ApplicationController
 	def openii_proyect
 		
 		@proyect = usuario_actual.proyects.find(params[:format])
-		flash.notice = @proyect.nombre
 	end
-
+ 
 
 	def create
 	    @proyect = usuario_actual.proyects.build(proyect_params)
