@@ -47,5 +47,7 @@ module SessionsHelper
 	end
 
 	def openii_proyect
+		@proyect = usuario_actual.proyects.find(params[:format])
 	end
+
 end

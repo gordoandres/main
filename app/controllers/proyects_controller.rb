@@ -5,11 +5,7 @@ class ProyectsController < ApplicationController
 	def index
 	end
 
-	def openii_proyect
-		
-		@proyect = usuario_actual.proyects.find(params[:format])
-	end
- 
+
 
 	def create
 	    @proyect = usuario_actual.proyects.build(proyect_params)
