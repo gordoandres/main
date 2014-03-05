@@ -1,0 +1,16 @@
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@problema) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :problema, "Problema" %>
+    <%= f.text_field :problema %>
+
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion, placeholder: "Descripción del problema" %>
+
+    <%= f.submit "Guardar", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

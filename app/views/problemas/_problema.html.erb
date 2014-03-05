@@ -1,0 +1,6 @@
+	<li>
+		<span class="content"><%= problema.problema %></span>
+		<%= link_to "editar", edit_problema_path(problema) %>
+    	| <%= link_to "borrar", problema, method: :delete, data: { confirm: "Seguro?" } %>
+
+	</li>

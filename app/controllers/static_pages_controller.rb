@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   		@proyect = usuario_actual.proyects.build 
   		@feed_items = usuario_actual.feed.paginate(page: params[:page])
   	end
-    openii_proyect = nil
+    session[:proyect_id] = nil
   end
 
   def help

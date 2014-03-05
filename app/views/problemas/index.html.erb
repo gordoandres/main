@@ -1,0 +1,11 @@
+<%= render 'shared/openii_proyect_header' %>
+<% provide(:title, 'Problemas') %>
+<h1>Problemas</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @problemas %>
+</ul>
+
+<%= will_paginate %>

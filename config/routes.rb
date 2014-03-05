@@ -1,4 +1,6 @@
 Main::Application.routes.draw do
+  resources :problemas
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :proyects, only: [:create, :destroy]

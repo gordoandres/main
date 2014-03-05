@@ -48,6 +48,13 @@ module SessionsHelper
 
 	def openii_proyect
 		@proyect = usuario_actual.proyects.find(params[:format])
+		session[:proyect_id] = @proyect.nombre
+		
+	end
+
+	def proyecto_actual
+		@proyect_id = session[:proyect_id]
+		@proyect = usuario_actual.proyects.find_by nombre: @proyect_id
 	end
 
 end

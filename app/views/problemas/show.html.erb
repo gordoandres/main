@@ -1,0 +1,8 @@
+<%= render 'shared/openii_proyect_header' %>
+<% provide(:title, @problema.problema) %>
+<div class = "container">
+		<span class="content"><%= @problema.problema %></span>
+  		<span class="timestamp">Creado hace <%= time_ago_in_words(@problema.created_at) %></span>
+</div>
+
+  
