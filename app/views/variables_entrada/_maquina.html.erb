@@ -1,0 +1,21 @@
+<h2>Maquinaria o Equipo</h2>
+<div class="span6 offset3">
+    <%= form_for(@maquina) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :capacidad %>
+    <%= f.number_field :capacidad, class: "numero" %>
+
+    <%= f.label :condicion %>
+    <%= f.number_field :condicion, class: "numero" %>
+
+    <%= f.label :herramientas %>
+    <%= f.number_field :herramientas, class: "numero" %>
+
+    <%= f.label :ajustes %>
+    <%= f.number_field :ajustes, class: "numero" %>
+
+    <%= f.label :mantenimiento %>
+    <%= f.number_field :mantenimiento, class: "numero" %>
+    <% end %>
+</div>

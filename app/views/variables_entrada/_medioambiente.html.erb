@@ -1,0 +1,15 @@
+
+<h2>Medio Ambiente</h2>
+<div class="span6 offset3">
+    <%= form_for(@medioambiente) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :ciclos %>
+    <%= f.number_field :ciclos, class: "numero" %>
+    
+
+    <%= f.label :temperatura %>
+    <%= f.number_field :temperatura, class: "numero" %>
+
+    <% end %>
+</div>

@@ -1,0 +1,45 @@
+<%= render 'shared/openii_proyect_header' %>
+<% provide(:title, 'Metodología 6M') %>
+<h3>Metodología 6M</h3>
+<div class="row-fluid">
+	<div class="dropdown">
+	  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+	    Escoge un problema
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+	  	<span>
+	    <li role="presentation">
+	    	<%= render proyecto_actual.problemas %></li></span>
+	    <li role="presentation" class="divider"></li>
+	    <li role="presentation"><%= link_to "Nuevo problema", new_problema_path %></li>
+	  </ul>
+	</div>
+</div>
+ <li role="presentation" class="divider"></li>
+<div class="row-fluid">
+	<div class="span4">
+		<%= render 'variables_entrada/manoobra' %>
+	</div>
+
+	<div class="span4">
+		<%= render 'variables_entrada/metodo' %>
+	</div>
+
+	<div class="span4">
+		<%= render 'variables_entrada/maquina' %>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span4">
+		<%= render 'variables_entrada/material' %>
+	</div>
+
+	<div class="span4">
+		<%= render 'variables_entrada/medicion' %>
+	</div>
+
+	<div class="span4">
+		<%= render 'variables_entrada/medioambiente' %>
+	</div>
+</div>

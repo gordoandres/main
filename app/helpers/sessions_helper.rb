@@ -57,4 +57,10 @@ module SessionsHelper
 		@proyect = usuario_actual.proyects.find_by nombre: @proyect_id
 	end
 
+	def problema_actual
+		
+	end
+
+
+
 end

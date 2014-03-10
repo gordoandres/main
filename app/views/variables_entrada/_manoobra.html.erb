@@ -1,0 +1,21 @@
+<h2>Mano de obra</h2>
+<div class="span6 offset3">
+    <%= form_for(@manoobra) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :conocimiento %>
+    <%= f.number_field :conocimiento, class: "numero" %>
+
+    <%= f.label :capacidad %>
+    <%= f.number_field :capacidad, class: "numero" %>
+
+    <%= f.label :entrenamiento %>
+    <%= f.number_field :entrenamiento, class: "numero" %>
+
+    <%= f.label :habilidad %>
+    <%= f.number_field :habilidad, class: "numero" %>
+
+    <%= f.label :motivacion %>
+    <%= f.number_field :motivacion, class: "numero" %>
+    <% end %>
+</div>

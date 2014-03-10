@@ -1,0 +1,7 @@
+class ManoobrasController < ApplicationController
+
+
+
+
+
+end

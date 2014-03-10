@@ -1,0 +1,16 @@
+<h2>Métodos</h2>
+<div class="span6 offset3">
+    <%= form_for(@metodo) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :estandarizacion %>
+    <%= f.number_field :estandarizacion, class: "numero" %>
+
+    <%= f.label :excepciones %>
+    <%= f.number_field :excepciones, class: "numero" %>
+
+    <%= f.label :definicion %>
+    <%= f.number_field :definicion, class: "numero" %>
+
+    <% end %>
+</div>

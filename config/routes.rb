@@ -1,11 +1,18 @@
 Main::Application.routes.draw do
   resources :problemas
-
+  resources :manoobras
+  resources :metodos
+  resources :maquinas
+  resources :materials
+  resources :medicions
+  resources :medioambientes
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :proyects, only: [:create, :destroy]
   resources "contacts", only: [:new, :create]
   root 'static_pages#home'
+  match '/seism', to: 'variables_entrada#seism', via: 'get'
+
   match '/openii_proyect', to: 'proyects#openii_proyect', via: 'get'
   match '/registro', to: 'users#new', via: 'get'
   match '/ingreso', to: 'sessions#new', via: 'get'

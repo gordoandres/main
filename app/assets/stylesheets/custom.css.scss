@@ -57,6 +57,13 @@ h2 {
   color: $grayLight;
 }
 
+h3 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -215,5 +222,24 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+
+/* li-presentation */
+    span {
+      display: block;
+      margin: 3px 3px 3px 3px;
+      line-height: 1;
+    }
+
+
+.numero {
+  border: 1px solid #bbb;
+  width: 35px;
+  margin-bottom: 10px;
+  @include box_sizing;
+}
+
+
+
 
 .hidden { display: none; }

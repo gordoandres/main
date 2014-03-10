@@ -1,0 +1,19 @@
+<h2>Material</h2>
+<div class="span6 offset3">
+    <%= form_for(@material) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :variablilidad %>
+    <%= f.number_field :variablilidad, class: "numero" %>
+
+    <%= f.label :cambios %>
+    <%= f.number_field :cambios, class: "numero" %>
+
+    <%= f.label :proveedores %>
+    <%= f.number_field :proveedores, class: "numero" %>
+
+    <%= f.label :tipos %>
+    <%= f.number_field :tipos, class: "numero" %>
+
+    <% end %>
+</div>

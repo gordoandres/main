@@ -23,7 +23,7 @@ class ProyectsController < ApplicationController
 		redirect_to root_url
 	end
 
-	 private
+	private
 
     def proyect_params
       params.require(:proyect).permit(:nombre)

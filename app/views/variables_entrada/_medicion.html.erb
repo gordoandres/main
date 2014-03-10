@@ -1,0 +1,22 @@
+<h2>Mediciones</h2>
+<div class="span6 offset3">
+    <%= form_for(@medicion) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :disponibilidad %>
+    <%= f.number_field :disponibilidad, class: "numero" %>
+
+    <%= f.label :definicion %>
+    <%= f.number_field :definicion, class: "numero" %>
+
+    <%= f.label :repetibilidad %>
+    <%= f.number_field :repetibilidad, class: "numero" %>
+
+    <%= f.label :reproducibilidad %>
+    <%= f.number_field :reproducibilidad, class: "numero" %>
+
+    <%= f.label :calibracion %>
+    <%= f.number_field :calibracion, class: "numero" %>
+
+    <% end %>
+</div>
